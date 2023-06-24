@@ -9,7 +9,7 @@ def set_upper_rows_rgb(row1, row2, row3):
     """
     Set the upper three rows of RGB leds.
 
-    Rows are a iterable of rgb values
+    Rows are an iterable of rgb values
     """
     row1 = ensure_size(row1, 21, (0, 0, 0))
     row2 = ensure_size(row2, 21, (0, 0, 0))
@@ -31,7 +31,7 @@ def set_lower_rows_rgb(row1, row2, row3):
     """
     Set the upper three rows of RGB leds.
 
-    Rows are a byte of 21 (16 bit) values returned by d0da.helper.encode_color
+    Rows are an iterable of rgb values
     """
     row1 = ensure_size(row1, 21, (0, 0, 0))
     row2 = ensure_size(row2, 21, (0, 0, 0))
