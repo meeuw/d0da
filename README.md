@@ -18,3 +18,11 @@ describes what the packets do and in what order they should be sent.
 
 - Linux only (for now)
 - Wooting 60HE (ARM) only, though the packets should be compatible with other keyboards.
+
+## Installation
+
+Run:
+
+```bash
+pipx install d0da
+```
