@@ -1,0 +1,18 @@
+syntax = "proto3";
+message Brightness {
+    message Payload {
+        uint32 brightness = 1;
+        uint32 a = 2;
+        uint32 b = 3;
+        uint32 c = 4;
+        uint32 d = 5;
+    };
+    Payload payload = 1;
+}
+
+message RGBRows {
+    message Payload {
+        bytes row = 1;
+    };
+    repeated Payload payload = 1;
+}
