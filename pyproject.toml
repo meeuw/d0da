@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Wooting D0DA protocol"
 authors = ["Dick Marinus"]
 readme = "README.md"
+packages = [ { include = "d0da" } ]
 
 [tool.poetry.dependencies]
 python = "^3.11"
