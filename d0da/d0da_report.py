@@ -104,3 +104,13 @@ def keymap():
     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
     """
     return D0DA + b"\x14"
+
+
+def rgb_power_off(dim_minutes, off_minutes):
+    """
+    enable:
+    d0 da 17 00 08 0a 04 08 05 10 0a 10
+
+    disable:
+    d0 da 17 00 02 10
+    """

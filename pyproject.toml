@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "d0da"
-version = "0.3.0"
+version = "0.4.0"
 description = "Wooting D0DA protocol"
 authors = ["Dick Marinus"]
 readme = "README.md"
 packages = [ { include = "d0da" } ]
+license = "GPL-3.0"
 
 [tool.poetry.dependencies]
 python = "^3.11"
