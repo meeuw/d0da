@@ -42,7 +42,7 @@ class Device:
     def send_feature(self, payload):
         device_handle = self.devices[0]
         hidraw = d0da.hidraw.HIDRaw(device_handle)
-        for packet in d0da.helper.create_packets(payload, 8, 1):
+        for packet in d0da.helper.create_packets(payload, 7, 1):
             hidraw.sendFeatureReport(packet)
         return device_handle.read(128) + device_handle.read(128)
 

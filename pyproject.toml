@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "d0da"
-version = "0.6.0"
+version = "0.7.0"
 description = "Wooting D0DA protocol"
 authors = ["Dick Marinus"]
 readme = "README.md"
