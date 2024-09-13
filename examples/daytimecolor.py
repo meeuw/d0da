@@ -5,9 +5,10 @@ import colorsys
 import hsluv
 import sys
 
+
 def set_hue(hue):
     values = []
-    rgb = colorsys.hls_to_rgb(hue, .5, 1)
+    rgb = colorsys.hls_to_rgb(hue, 0.5, 1)
     h = hsluv.rgb_to_hsluv(rgb)
 
     for i in range(21):
@@ -28,14 +29,14 @@ def set_hue(hue):
     payload = d0da.d0da_report.set_lower_rows_rgb(values, values, values)
     device.send_buffer(payload)
 
+
 if __name__ == "__main__":
     device = d0da_device.get_device(sys.argv[1])
 
     localtime = time.localtime()
     hue = (localtime.tm_hour * 60 + localtime.tm_min) / (24 * 60)
-    #print(hue)
-    #set_hue(12)
+    # print(hue)
+    # set_hue(12)
     set_hue(hue)
-    #for i in range(0, 100):
+    # for i in range(0, 100):
     #    set_hue(i / 100)
-

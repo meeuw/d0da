@@ -146,7 +146,7 @@ def woot_dev_init():
     return D0DA + b"\x21"
 
 
-def get_rgb_profile_base():
+def removed_get_rgb_profile_base():
     return D0DA + b"\x22"
 
 
@@ -158,7 +158,7 @@ def get_rgb_profile_color_part2():
     return D0DA + b"\x24"
 
 
-def get_rgb_profile_effect():
+def removed_get_rgb_profile_effect():
     return D0DA + b"\x25"
 
 
@@ -212,3 +212,39 @@ def get_actuation_profile():
 
 def get_rgb_profile_core():
     return D0DA + b"\x32"
+
+
+def get_global_settings():
+    return D0DA + b"\x33"
+
+
+def get_akc_profile():
+    return D0DA + b"\x34"
+
+
+def save_akc_profile():
+    return D0DA + b"\x35"
+
+
+def get_rapid_trigger_profile():
+    return D0DA + b"\x36"
+
+
+def get_profile_metadata():
+    return D0DA + b"\x37"
+
+
+def is_flash_chip_connected():
+    return D0DA + b"\x38"
+
+
+def get_rgb_layer():
+    return D0DA + b"\x39"
+
+
+def get_flash_stats():
+    return D0DA + b"\x3a"
+
+
+def get_rgb_bins():
+    return D0DA + b"\x3b"

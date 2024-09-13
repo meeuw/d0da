@@ -21,7 +21,7 @@ def set_upper_rows_rgb(row1, row2, row3):
     rgb_rows_pb2.payload.add(row=one_is_more_encode(encode_color(*rgb) for rgb in row3))
     return (
         D0DA
-        + b"\x0e"
+        + b"\x0e"  # RgbProfileColorsPart1
         + struct.pack("!H", rgb_rows_pb2.ByteSize())
         + rgb_rows_pb2.SerializeToString()
     )
@@ -43,7 +43,7 @@ def set_lower_rows_rgb(row1, row2, row3):
     rgb_rows_pb2.payload.add(row=one_is_more_encode(encode_color(*rgb) for rgb in row3))
     return (
         D0DA
-        + b"\x0f"
+        + b"\x0f"  # RgbProfileColorsPart2
         + struct.pack("!H", rgb_rows_pb2.ByteSize())
         + rgb_rows_pb2.SerializeToString()
     )
@@ -64,7 +64,7 @@ def set_brightness(brightness, a=0xFFFF, b=0xFFFF, c=0xFFFF, d=0xFFFF):
     )
     return (
         D0DA
-        + b"\x16"
+        + b"\x16"  # RgbProfileCore
         + struct.pack("!H", brightness_pb2.ByteSize())
         + brightness_pb2.SerializeToString()
     )
@@ -83,7 +83,7 @@ def rgb_array_update_keyboard(*args):
     This is only supported after calling woot_dev_init.
     """
     array = b"".join((struct.pack("H", encode_color(*rgb)) for rgb in args))
-    return D0DA + b"\x0b" + array
+    return D0DA + b"\x0b" + array  # WootDevRawReport
 
 
 def keymap():
@@ -103,7 +103,7 @@ def keymap():
     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
     """
-    return D0DA + b"\x14"
+    return D0DA + b"\x14"  # MappingProfile
 
 
 def rgb_power_off(dim_minutes, off_minutes):
@@ -114,3 +114,4 @@ def rgb_power_off(dim_minutes, off_minutes):
     disable:
     d0 da 17 00 02 10
     """
+    # GlobalSettings
