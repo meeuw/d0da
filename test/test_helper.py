@@ -71,3 +71,18 @@ def test_encode_color(test_input, expected):
     """
     actual = d0da.helper.encode_color(*test_input)
     assert bin(actual) == f"0b{expected.replace(' ', '')}"
+
+
+@pytest.mark.parametrize(
+    "rgb",
+    [
+        (0xF8, 0x00, 0x00),
+        (0x00, 0xF8, 0x00),
+        (0x00, 0x00, 0xF8),
+    ],
+)
+def test_encode_decode_color(rgb):
+    """
+    Test d0da.helper.decode_color
+    """
+    assert d0da.helper.decode_color(d0da.helper.encode_color(*rgb)) == rgb
